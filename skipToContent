@@ -1,0 +1,24 @@
+// ==UserScript==
+// @name         Neopets - Skip To Content
+// @namespace    http://tampermonkey.net/
+// @version      2024-11-02
+// @description  Adds a skip to content button to the top of the page for keyboard accessibility
+// @author       calpico@neopets
+// @match        https://www.neopets.com/*
+// @icon         https://www.google.com/s2/favicons?sz=64&domain=neopets.com
+// @grant        GM_addStyle
+// ==/UserScript==
+
+(function() {
+    'use strict';
+    const skipToContent = () => { document.getElementById('content').querySelector('.content').querySelector('a, button, input').focus() }
+
+    const skipToContentButton = document.createElement('div')
+    skipToContentButton.innerHTML = "<button class='skiptocontent'>Skip to content</button>"
+    skipToContentButton.addEventListener ("click", skipToContent , false);
+
+    GM_addStyle(".skiptocontent { transform: translateY(-100px); position: absolute; top: 15px; left: 15px; background: black; color: white; height: 35px; padding: 15px; display: flex; justify-content: center; align-items: center; }");
+    GM_addStyle(".skiptocontent:focus { transform: translateY(0px); }");
+
+    document.body.prepend(skipToContentButton);
+})();
