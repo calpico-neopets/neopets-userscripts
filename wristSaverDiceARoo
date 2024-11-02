@@ -1,0 +1,23 @@
+// ==UserScript==
+// @name         Wrist Saver - dice-a-roo
+// @namespace    http://tampermonkey.net/
+// @version      2024-10-31
+// @description  auto-focus dice-a-roo buttons to make the game more keyboard accessible
+// @author       calpico@neopets
+// @match        https://www.neopets.com/games/play_dicearoo.phtml
+// @match        https://www.neopets.com/games/dicearoo.phtml
+// @icon         https://images.neopets.com/games/dice/kingroo.gif
+// @grant        none
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    const inputEls = document.getElementsByTagName('input')
+    for(const inputEl of inputEls) {
+        if(inputEl.value === "Lets Play! (Costs 5 NP)") { inputEl.focus() }
+        if(inputEl.value === 'Press Me') { inputEl.focus() }
+        if(inputEl.value === 'Play Dice-A-Roo') { inputEl.focus() }
+        if(inputEl.value === 'Roll Again') { inputEl.focus() }
+    }
+})();
