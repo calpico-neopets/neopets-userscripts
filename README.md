@@ -5,6 +5,8 @@ quality of life userscripts for neopets.com
 Auto focus buttons to facilitate keyboard accessibility of various neopets games
 
 ### Dice-A-Roo
+[Get the code -->](https://github.com/calpico-neopets/neopets-userscripts/blob/main/wristSaverDiceARoo)
+
 Press **Enter/Return** to click focused buttons/links
 
 Press **tab** to focus the next button
